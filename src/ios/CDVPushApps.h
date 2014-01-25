@@ -7,7 +7,7 @@
 //
 
 #import <Cordova/CDVPlugin.h>
-#import <PushApps/PushApps.h>
+#import "PushApps.h"
 
 @interface CDVPushApps : CDVPlugin <PushAppsDelegate>
 
