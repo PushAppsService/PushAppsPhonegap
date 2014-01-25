@@ -22,6 +22,10 @@
         <clobbers target="PushNotification" />
     </js-module>
     
+    <config-file>
+        <access origin="*.pushapps.mobi" />
+    </config-file>
+    
     <!-- android -->
     <platform name="android">
         
