@@ -150,14 +150,14 @@ public class PushAppsPlugin extends CordovaPlugin {
 			CallbackContext callbackContext) {
 
 		callbackIds.put("unregisterDevice", callbackContext);
-		manager.unregister(cordova.getActivity());
+		manager.unregister();
 
 		return true;
 	}
 	
 	private boolean internalDeviceId(CallbackContext callbackContext) {
 		
-		callbackContext.success(this.manager.getDeviceId(cordova.getActivity().getApplicationContext()));
+		callbackContext.success(this.manager.getDeviceId());
 		
 		return true;
 	}
