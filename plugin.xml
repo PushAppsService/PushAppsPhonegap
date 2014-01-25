@@ -27,7 +27,7 @@
         
         <config-file target="res/xml/config.xml" parent="/widget">
             <feature name="PushAppsPlugin">
-                <param name="android-package" value="com.urbanairship.phonegap.PushNotificationPlugin"/>
+                <param name="android-package" value="com.pushapps.phonegap.PushAppsPlugin"/>
                 <param name="onload" value="true" />
             </feature>
         </config-file>
@@ -68,6 +68,9 @@
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </config-file>
+        
+        <source-file src="src/android/src/com/pushapps/phonegap/PushAppsPlugin.java"
+                target-dir="src/com/pushapps/phonegap" />
         
         <source-file src="src/android/pushapps.jar" target-dir="libs/" />
     </platform>
