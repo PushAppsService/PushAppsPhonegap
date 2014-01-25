@@ -69,9 +69,8 @@
             </intent-filter>
         </config-file>
         
-        <source-file src="src/android/src/com/pushapps/phonegap/PushAppsPlugin.java"
-                target-dir="src/com/pushapps/phonegap" />
-        
+        <!-- PushApps library -->
+        <!--<source-file src="src/android/src/com/pushapps/phonegap/PushAppsPlugin.java" target-dir="src/com/pushapps/phonegap" />-->
         <source-file src="src/android/pushapps.jar" target-dir="libs/" />
     </platform>
     
