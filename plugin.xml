@@ -82,7 +82,7 @@
     <platform name="ios">
         <config-file target="config.xml" parent="/*">
             <feature name="PushAppsPlugin">
-                <param name="ios-package" value="PushAppsPlugin" />
+                <param name="ios-package" value="CDVPushApps" />
                 <param name="onload" value="true" />
             </feature>
         </config-file>
