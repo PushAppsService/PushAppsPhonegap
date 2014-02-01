@@ -101,7 +101,7 @@
     }
     
     // Update JS
-    NSString *javascripCode = [NSString stringWithFormat:@"window.pushapps.messageReceive('%@')", jsonString];
+    NSString *javascripCode = [NSString stringWithFormat:@"PushNotification.messageReceive('%@')", jsonString];
     [self performSelectorOnMainThread:@selector(writeJavascript:) withObject:javascripCode waitUntilDone:YES];
 }
 
