@@ -54,7 +54,7 @@ public class PushAppsPlugin extends CordovaPlugin {
 
 	private void internalOnMessage(JSONObject message) {
 		final String jsStatement = String.format(
-				"window.pushapps.messageReceive('%s');", message.toString());
+				"PushNotification.messageReceive('%s');", message.toString());
 
 		cordova.getActivity().runOnUiThread(new Runnable() {
 			@Override
