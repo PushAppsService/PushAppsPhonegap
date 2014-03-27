@@ -35,21 +35,25 @@ public class PushAppsPlugin extends CordovaPlugin {
 
 	// Called when there is need to check current messages
 	private void checkIntentExtras(Intent intent) {
-		String message = intent.getExtras().getString("Message");
-		if (message != null && message.length() > 0) {
-			String notificationId = intent.getExtras().getString("Id");
-			if (!SharedData
-					.getInstance(cordova.getActivity().getApplicationContext())
-					.getPrefString("LastPushMessageRead", "")
-					.equals(notificationId)) {
-				SharedData.getInstance(
-						cordova.getActivity().getApplicationContext())
-						.setPrefString("LastPushMessageRead", notificationId);
-				Bundle params = intent.getExtras();
-				internalOnMessage(getJSONStringFromBundle(params));
+        
+		if (intent.getExtras() != null) {
+			String message = intent.getExtras().getString("Message");
+			if (message != null && message.length() > 0) {
+				String notificationId = intent.getExtras().getString("Id");
+				if (!SharedData
+                    .getInstance(cordova.getActivity().getApplicationContext())
+                    .getPrefString("LastPushMessageRead", "")
+                    .equals(notificationId)) {
+					SharedData.getInstance(
+                                           cordova.getActivity().getApplicationContext())
+                    .setPrefString("LastPushMessageRead", notificationId);
+					Bundle params = intent.getExtras();
+					internalOnMessage(getJSONStringFromBundle(params));
+				}
+                
 			}
-
 		}
+        
 	}
 
 	private void internalOnMessage(JSONObject message) {
