@@ -87,7 +87,7 @@
 
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
-
+    
     return YES;
 }
 
@@ -136,6 +136,11 @@
 {
     // Notify PushApps of a successful registration.
     [[PushAppsManager sharedInstance] updatePushToken:deviceToken];
+}
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
+{
+    NSLog(@"error registering for push notifications - %@", error.localizedDescription);
 }
 
 // Gets called when a remote notification is received while app is in the foreground.

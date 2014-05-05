@@ -26,7 +26,6 @@
 		308D05391370CCF300D202BF /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 308D05301370CCF300D202BF /* icon@2x.png */; };
 		30A0434814DC770100060A13 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 30A0434314DC770100060A13 /* Localizable.strings */; };
 		30FC414916E50CA1004E6F35 /* icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 30FC414816E50CA1004E6F35 /* icon-72@2x.png */; };
-		521318E1FDF54AFE9E461D1F /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48069C0318584978A21FF7EB /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		5AEE5B35173C68D80009041E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AEE5B34173C68D80009041E /* CoreLocation.framework */; };
 		5B1594DD16A7569C00FEF299 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B1594DC16A7569C00FEF299 /* AssetsLibrary.framework */; };
 		6293282ECDA44E6CA7D094DB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF24DD2E61EA4A8BA106DA68 /* UIKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -96,7 +95,6 @@
 		30A0434714DC770100060A13 /* se */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = se; path = Localizable.strings; sourceTree = "<group>"; };
 		30FC414816E50CA1004E6F35 /* icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-72@2x.png"; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* PAPhonegapCLI-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PAPhonegapCLI-Prefix.pch"; sourceTree = "<group>"; };
-		48069C0318584978A21FF7EB /* AdSupport.framework */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		4E12217EA6CD43C498831020 /* CDVDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVDevice.m; path = org.apache.cordova.device/CDVDevice.m; sourceTree = "<group>"; };
 		5AEE5B34173C68D80009041E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		5B1594DC16A7569C00FEF299 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
@@ -135,7 +133,6 @@
 				305D5FD1115AB8F900A74A75 /* MobileCoreServices.framework in Frameworks */,
 				5AEE5B35173C68D80009041E /* CoreLocation.framework in Frameworks */,
 				ECF69147C77242EDB1B50736 /* libPushApps.a in Frameworks */,
-				521318E1FDF54AFE9E461D1F /* AdSupport.framework in Frameworks */,
 				D6E14E193C894D6BAFA832C8 /* Foundation.framework in Frameworks */,
 				6293282ECDA44E6CA7D094DB /* UIKit.framework in Frameworks */,
 			);
@@ -230,7 +227,6 @@
 				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
 				305D5FD0115AB8F900A74A75 /* MobileCoreServices.framework */,
 				9CDE4FE5A0314DC09CC3F724 /* libPushApps.a */,
-				48069C0318584978A21FF7EB /* AdSupport.framework */,
 				CF211AA3A8CC4FBA8F919DED /* Foundation.framework */,
 				BF24DD2E61EA4A8BA106DA68 /* UIKit.framework */,
 			);
@@ -250,11 +246,11 @@
 			children = (
 				4E12217EA6CD43C498831020 /* CDVDevice.m */,
 				F5D85F4A158E4E2380D1DF70 /* CDVDevice.h */,
-				E092D672C68F4A7FB669DA37 /* CDVPushApps.m */,
-				E78A022901424A669B01E7C4 /* libPushApps.a */,
 				60BB0C9739A84C81B45A70CA /* CDVPushApps.h */,
+				E092D672C68F4A7FB669DA37 /* CDVPushApps.m */,
 				01510836B97147D8A6AB3A82 /* PushApps.h */,
 				9F46AA1A0E7D4FBD94D94742 /* PushAppsManager.h */,
+				E78A022901424A669B01E7C4 /* libPushApps.a */,
 				AC8E0701FC9345C6AD7B8FC3 /* CDVLogger.m */,
 				1F8189F7C7364E36B7E3488E /* CDVLogger.h */,
 			);
@@ -506,6 +502,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -534,7 +531,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = PAPhonegapCLI;
-				PROVISIONING_PROFILE = "6D39E357-C562-4AD8-AE7B-0B79C64D08D6";
+				PROVISIONING_PROFILE = "F2E73AC5-33CB-481B-9103-C2D235610D40";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -545,6 +542,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PAPhonegapCLI/PAPhonegapCLI-Prefix.pch";
@@ -571,7 +569,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = PAPhonegapCLI;
-				PROVISIONING_PROFILE = "6D39E357-C562-4AD8-AE7B-0B79C64D08D6";
+				PROVISIONING_PROFILE = "F2E73AC5-33CB-481B-9103-C2D235610D40";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -616,6 +614,7 @@
 					"\"$(BUILT_PRODUCTS_DIR)/libCordova.a\"",
 					"-ObjC",
 				);
+				PROVISIONING_PROFILE = "F2E73AC5-33CB-481B-9103-C2D235610D40";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
 				USER_HEADER_SEARCH_PATHS = "";
@@ -661,6 +660,7 @@
 					"\"$(BUILT_PRODUCTS_DIR)/libCordova.a\"",
 					"-ObjC",
 				);
+				PROVISIONING_PROFILE = "F2E73AC5-33CB-481B-9103-C2D235610D40";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
 				USER_HEADER_SEARCH_PATHS = "";

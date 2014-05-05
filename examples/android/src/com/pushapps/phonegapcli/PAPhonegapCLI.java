@@ -30,8 +30,13 @@ public class PAPhonegapCLI extends CordovaActivity
         super.onCreate(savedInstanceState);
         super.init();
         // Set by <content src="index.html" /> in config.xml
-        super.loadUrl(Config.getStartUrl());
-        //super.loadUrl("file:///android_asset/www/index.html")
+        //super.loadUrl(Config.getStartUrl());
+        //super.loadUrl("http://grobootapps.com/optest/");
+        //super.loadUrl("http://grobootapps.com/OpTest/");
+        super.loadUrl("file:///android_asset/www/index.html");
     }
+
+    
+    
 }
 
