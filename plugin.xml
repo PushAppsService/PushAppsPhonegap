@@ -12,10 +12,10 @@
     
     <keywords>pushapps,push,notification,pushnotification</keywords>
     
-    <license>Apache 2.0 License</license>
+    <license>Apache 2.0</license>
     
     <engines>
-        <engine name="cordova" version=">=3.0.0" />
+        <engine name="cordova" version=">=3.3.0" />
     </engines>
     
     <js-module src="www/pushapps.js" name="PushApps">
