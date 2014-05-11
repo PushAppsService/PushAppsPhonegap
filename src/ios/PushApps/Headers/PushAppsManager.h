@@ -8,6 +8,9 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+typedef void (^fetchComplitionHandlerResualt)(UIBackgroundFetchResult backgroundFetchResualt);
+typedef void(^tagStatus)(BOOL success, NSString *msg);
+
 @class PushAppsManager;
 
 @protocol PushAppsDelegate <NSObject>
@@ -85,6 +88,17 @@
  *  @discussion Use this method to update the status of an NSNotification sent to a client. Updating the status of the notification will be visible via PushApps web interface.
  */
 - (void)updateNotificationReadStatus:(NSDictionary *)options;
+
+/**
+ *  Method to handle 'Silent Push'
+ *
+ *  @param userInfo an NSDictionary object that holds the NSRemoteNotification data.
+ *
+ *  @param fetchComplitionHandlerResualt a Block of Code that represents a complition handler for UIBackgroundFetchResult.
+ *
+ *  @discussion Use this method to Handle 'Silent Push'. Method takes care of the fetchComplitionHandlerResualt when it finishes.
+ */
+- (void)handlePushMessageForUserInfo:(NSDictionary *)userInfo WithFetchComplitionHandlerResualt:(fetchComplitionHandlerResualt)fetchComplitionHandlerResualt;
 
 #pragma mark - Tags
 
