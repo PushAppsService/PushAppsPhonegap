@@ -24,7 +24,6 @@ import com.groboot.pushapps.PushAppsRegistrationInterface;
 import com.groboot.pushapps.PushManager;
 import com.groboot.pushapps.SendTagResponseListener;
 import com.groboot.pushapps.Tag;
-import com.pushapps.phonegapcli.R;
 
 public class PushAppsPlugin extends CordovaPlugin {
 
