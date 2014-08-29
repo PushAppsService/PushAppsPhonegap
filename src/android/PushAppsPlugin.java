@@ -182,7 +182,6 @@ public class PushAppsPlugin extends CordovaPlugin {
 					.getApplicationContext());
 			manager.registerForRegistrationEvents(pushAppsRegistrationInterface);
 			manager.setShouldStackNotifications(true);
-			manager.setNotificationIcon(R.drawable.icon);
 			checkIntentExtras(cordova.getActivity().getIntent());
 
 		} catch (JSONException e) {
