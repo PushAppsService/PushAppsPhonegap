@@ -12,22 +12,22 @@
     
     <keywords>pushapps,push,notification,pushnotification</keywords>
     
-    <license>Apache 2.0</license>
+    <license>Apache 2.0 License</license>
     
     <engines>
         <engine name="cordova" version=">=3.3.0" />
     </engines>
     
+    <js-module src="www/pushapps.js" name="PushApps">
+        <clobbers target="PushNotification" />
+    </js-module>
+    
+    <config-file>
+        <access origin="*.pushapps.mobi" />
+    </config-file>
+    
     <!-- android -->
     <platform name="android">
-        
-        <js-module src="www/pushapps.js" name="PushApps">
-            <clobbers target="PushNotification" />
-        </js-module>
-        
-        <config-file>
-            <access origin="*.pushapps.mobi" />
-        </config-file>
         
         <config-file target="res/xml/config.xml" parent="/widget">
             <feature name="PushAppsPlugin">
@@ -54,7 +54,6 @@
                 <intent-filter>
                     <action android:name="com.google.android.c2dm.intent.RECEIVE" />
                     <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
-                    
                     <category android:name="$PACKAGE_NAME" />
                 </intent-filter>
             </receiver>
@@ -75,33 +74,7 @@
         
         <!-- PushApps library -->
         <source-file src="src/android/PushAppsPlugin.java" target-dir="src/com/pushapps/phonegap" />
-        <source-file src="src/android/Constants.java" target-dir="src/com/groboot/pushapps" />
-        <source-file src="src/android/DeviceIDTypes.java" target-dir="src/com/groboot/pushapps" />
-        <source-file src="src/android/GCMBaseIntentService.java" target-dir="src/com/groboot/pushapps" />
-        <source-file src="src/android/GCMBaseIntentServiceImpl.java" target-dir="src/com/groboot/pushapps" />
-        <source-file src="src/android/GCMBroadcastReceiver.java" target-dir="src/com/groboot/pushapps" />
-        <source-file src="src/android/GCMRegistrar.java" target-dir="src/com/groboot/pushapps" />
-        <source-file src="src/android/Logger.java" target-dir="src/com/groboot/pushapps" />
-        <source-file src="src/android/PostSender.java" target-dir="src/com/groboot/pushapps" />
-        <source-file src="src/android/PostSenderTask.java" target-dir="src/com/groboot/pushapps" />
-        <source-file src="src/android/PushActivity.java" target-dir="src/com/groboot/pushapps" />
-        <source-file src="src/android/PushAppsHelper.java" target-dir="src/com/groboot/pushapps" />
-        <source-file src="src/android/PushAppsMessageInterface.java" target-dir="src/com/groboot/pushapps" />
-        <source-file src="src/android/PushAppsNotification.java" target-dir="src/com/groboot/pushapps" />
-        <source-file src="src/android/PushAppsRegistrationInterface.java" target-dir="src/com/groboot/pushapps" />
-        <source-file src="src/android/PushAppsUserManager.java" target-dir="src/com/groboot/pushapps" />
-        <source-file src="src/android/PushManager.java" target-dir="src/com/groboot/pushapps" />
-        <source-file src="src/android/PushService.java" target-dir="src/com/groboot/pushapps" />
-        <source-file src="src/android/RegistrationChecker.java" target-dir="src/com/groboot/pushapps" />
-        <source-file src="src/android/SendTagResponseListener.java" target-dir="src/com/groboot/pushapps" />
-        <source-file src="src/android/SharedData.java" target-dir="src/com/groboot/pushapps" />
-        <source-file src="src/android/Tag.java" target-dir="src/com/groboot/pushapps" />
-        <source-file src="src/android/Utils.java" target-dir="src/com/groboot/pushapps" />
-        <source-file src="src/android/v4/NotificationCompat.java" target-dir="src/com/groboot/pushapps/v4" />
-        <source-file src="src/android/v4/NotificationCompatHoneycomb.java" target-dir="src/com/groboot/pushapps/v4" />
-        <source-file src="src/android/v4/NotificationCompatIceCreamSandwich.java" target-dir="src/com/groboot/pushapps/v4" />
-        <source-file src="src/android/v4/NotificationCompatJellybean.java" target-dir="src/com/groboot/pushapps/v4" />
-
+        <source-file src="src/android/pushapps.jar" target-dir="libs/" />
     </platform>
     
     <!-- ios -->
@@ -113,24 +86,13 @@
             </feature>
         </config-file>
         
-        <js-module src="www/pushapps.js" name="PushApps">
-            <clobbers target="PushNotification" />
-        </js-module>
-        
-        <config-file>
-            <access origin="*.pushapps.mobi" />
-        </config-file>
-        
         <header-file src="src/ios/CDVPushApps.h" />
         <source-file src="src/ios/CDVPushApps.m" />
         
-        <header-file src="src/ios/AppDelegate+PushApps.h" />
-        <source-file src="src/ios/AppDelegate+PushApps.m" />
-        
         <!-- PushApps framework -->
-        <header-file src="src/ios/PushApps.framework/Versions/A/Headers/PushApps.h" target-dir="ios"/>
-        <header-file src="src/ios/PushApps.framework/Versions/A/Headers/PushAppsManager.h" target-dir="ios"/>
-        <source-file src="src/ios/PushApps.framework/Versions/A/PushApps" framework="true"/>
+        <header-file src="src/ios/PushApps/Headers/PushApps.h"  />
+        <header-file src="src/ios/PushApps/Headers/PushAppsManager.h"  />
+        <source-file src="src/ios/PushApps/libPushApps.a" framework="true"/>
         
         <!-- System frameworks -->
         <framework src="Foundation.framework" weak="true" />
