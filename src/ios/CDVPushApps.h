@@ -11,7 +11,7 @@
 
 @interface CDVPushApps : CDVPlugin <PushAppsDelegate>
 
-- (CDVPlugin *)initWithWebView:(UIWebView*)theWebView;
+- (CDVPlugin*)initWithWebView:(UIWebView*)theWebView;
 
 - (void)registerUser:(CDVInvokedUrlCommand*)command;
 - (void)unRegisterUser:(CDVInvokedUrlCommand*)command;
