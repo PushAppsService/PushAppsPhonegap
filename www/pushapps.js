@@ -1,3 +1,4 @@
+cordova.define("com.pushapps.phonegap.PushApps", function(require, exports, module) {
                function PushNotification() {}
                
                // Call this method in order to register the device to the PushNotification service
@@ -22,6 +23,17 @@
                             errorCallback,
                             'PushAppsPlugin',
                             'unRegisterUser',
+                            []
+                            );
+               };
+               
+               // Check if the user enabled push notifications - iOS ONLY
+               PushNotification.prototype.isPushEnabled = function (successCallback, errorCallback) {
+               cordova.exec(
+                            successCallback,
+                            errorCallback,
+                            'PushAppsPlugin',
+                            'isPushEnabled',
                             []
                             );
                };
@@ -84,5 +96,6 @@
                };
                
                module.exports = new PushNotification();
+});
                
 

@@ -15,6 +15,7 @@
 
 - (void)registerUser:(CDVInvokedUrlCommand*)command;
 - (void)unRegisterUser:(CDVInvokedUrlCommand*)command;
+- (void)isPushEnabled:(CDVInvokedUrlCommand*)command;
 - (void)getDeviceId:(CDVInvokedUrlCommand*)command;
 - (void)setTags:(CDVInvokedUrlCommand*)command;
 - (void)removeTags:(CDVInvokedUrlCommand*)command;
