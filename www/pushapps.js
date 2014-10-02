@@ -1,4 +1,4 @@
-cordova.define("com.pushapps.phonegap.PushApps", function(require, exports, module) {
+
                function PushNotification() {}
                
                // Call this method in order to register the device to the PushNotification service
@@ -96,6 +96,5 @@ cordova.define("com.pushapps.phonegap.PushApps", function(require, exports, modu
                };
                
                module.exports = new PushNotification();
-});
-               
+      
 
