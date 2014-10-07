@@ -67,7 +67,7 @@
 {
     // Starting the push apps manager
     [[PushAppsManager sharedInstance] setDelegate:self];
-    [[PushAppsManager sharedInstance] unregisterFromPushNotificationsByDeviceId:[[PushAppsManager sharedInstance] getDeviceId]];
+    [[PushAppsManager sharedInstance] unregisterFromPushNotificationsByDeviceId];
     
     CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@""];
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];

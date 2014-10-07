@@ -7,4 +7,4 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <PushApps/PushAppsManager.h>
+#import "PushAppsManager.h"
