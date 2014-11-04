@@ -88,6 +88,9 @@
         
         <header-file src="src/ios/CDVPushApps.h" />
         <source-file src="src/ios/CDVPushApps.m" />
+
+	<header-file src="src/ios/AppDelegate+pushapps.h" />
+	<source-file src="src/ios/AppDelegate+pushapps.m" />
         
         <!-- PushApps framework -->
         <header-file src="src/ios/PushApps/Headers/PushApps.h"  />
